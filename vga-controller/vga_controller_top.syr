@@ -1,0 +1,461 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: vga_controller_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vga_controller_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vga_controller_top"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : vga_controller_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_sync.v" into library work
+Parsing module <vga_sync>.
+Analyzing Verilog file "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\aiso_rst.v" into library work
+Parsing module <aiso_rst>.
+Analyzing Verilog file "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_controller_top.v" into library work
+Parsing module <vga_controller_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <vga_controller_top>.
+
+Elaborating module <aiso_rst>.
+
+Elaborating module <vga_sync>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <vga_controller_top>.
+    Related source file is "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_controller_top.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <vga_controller_top> synthesized.
+
+Synthesizing Unit <aiso_rst>.
+    Related source file is "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\aiso_rst.v".
+    Found 1-bit register for signal <delay_reg>.
+    Found 1-bit register for signal <synch_reg>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <aiso_rst> synthesized.
+
+Synthesizing Unit <vga_sync>.
+    Related source file is "C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_sync.v".
+    Found 10-bit register for signal <hcount>.
+    Found 10-bit register for signal <vcount>.
+    Found 2-bit register for signal <pxl_clk>.
+    Found 2-bit adder for signal <pxl_clk[1]_GND_3_o_add_1_OUT> created at line 56.
+    Found 10-bit adder for signal <hcount[9]_GND_3_o_add_5_OUT> created at line 72.
+    Found 10-bit adder for signal <vcount[9]_GND_3_o_add_12_OUT> created at line 92.
+    Found 10-bit comparator lessequal for signal <n0009> created at line 74
+    Found 10-bit comparator lessequal for signal <n0011> created at line 74
+    Found 10-bit comparator lessequal for signal <n0020> created at line 94
+    Found 10-bit comparator lessequal for signal <n0022> created at line 94
+    Found 10-bit comparator greater for signal <hcount[9]_PWR_3_o_LessThan_20_o> created at line 98
+    Found 10-bit comparator greater for signal <vcount[9]_GND_3_o_LessThan_21_o> created at line 98
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <vga_sync> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit adder                                          : 2
+ 2-bit adder                                           : 1
+# Registers                                            : 5
+ 1-bit register                                        : 2
+ 10-bit register                                       : 2
+ 2-bit register                                        : 1
+# Comparators                                          : 6
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 4
+# Multiplexers                                         : 4
+ 10-bit 2-to-1 multiplexer                             : 2
+ 12-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <vga_sync>.
+The following registers are absorbed into counter <pxl_clk>: 1 register on signal <pxl_clk>.
+The following registers are absorbed into counter <hcount>: 1 register on signal <hcount>.
+The following registers are absorbed into counter <vcount>: 1 register on signal <vcount>.
+Unit <vga_sync> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 2-bit up counter                                      : 1
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+# Comparators                                          : 6
+ 10-bit comparator greater                             : 2
+ 10-bit comparator lessequal                           : 4
+# Multiplexers                                         : 1
+ 12-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <vga_controller_top> ...
+
+Optimizing unit <vga_sync> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vga_controller_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 24
+ Flip-Flops                                            : 24
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : vga_controller_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 91
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 2
+#      LUT2                        : 19
+#      LUT3                        : 1
+#      LUT4                        : 1
+#      LUT5                        : 2
+#      LUT6                        : 24
+#      MUXCY                       : 18
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 24
+#      FDC                         : 4
+#      FDCE                        : 20
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 27
+#      IBUF                        : 13
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              24  out of  126800     0%  
+ Number of Slice LUTs:                   51  out of  63400     0%  
+    Number used as Logic:                51  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     53
+   Number with an unused Flip Flop:      29  out of     53    54%  
+   Number with an unused LUT:             2  out of     53     3%  
+   Number of fully used LUT-FF pairs:    22  out of     53    41%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          28
+ Number of bonded IOBs:                  28  out of    210    13%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 24    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.509ns (Maximum Frequency: 398.597MHz)
+   Minimum input arrival time before clock: 0.633ns
+   Maximum output required time after clock: 2.430ns
+   Maximum combinational path delay: 0.673ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.509ns (frequency: 398.597MHz)
+  Total number of paths / destination ports: 1446 / 65
+-------------------------------------------------------------------------
+Delay:               2.509ns (Levels of Logic = 12)
+  Source:            u1/hcount_6 (FF)
+  Destination:       u1/hcount_9 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: u1/hcount_6 to u1/hcount_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.361   0.693  u1/hcount_6 (u1/hcount_6)
+     LUT5:I0->O           12   0.097   0.346  u1/endh<9>_SW0 (N8)
+     LUT6:I5->O            1   0.097   0.000  u1/Mcount_hcount_lut<0> (u1/Mcount_hcount_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  u1/Mcount_hcount_cy<0> (u1/Mcount_hcount_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<1> (u1/Mcount_hcount_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<2> (u1/Mcount_hcount_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<3> (u1/Mcount_hcount_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<4> (u1/Mcount_hcount_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<5> (u1/Mcount_hcount_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<6> (u1/Mcount_hcount_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  u1/Mcount_hcount_cy<7> (u1/Mcount_hcount_cy<7>)
+     MUXCY:CI->O           0   0.023   0.000  u1/Mcount_hcount_cy<8> (u1/Mcount_hcount_cy<8>)
+     XORCY:CI->O           1   0.370   0.000  u1/Mcount_hcount_xor<9> (u1/Mcount_hcount9)
+     FDCE:D                    0.008          u1/hcount_9
+    ----------------------------------------
+    Total                      2.509ns (1.470ns logic, 1.039ns route)
+                                       (58.6% logic, 41.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.633ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       u0/synch_reg (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to u0/synch_reg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.001   0.283  rst_IBUF (rst_IBUF)
+     FDC:CLR                   0.349          u0/delay_reg
+    ----------------------------------------
+    Total                      0.633ns (0.350ns logic, 0.283ns route)
+                                       (55.2% logic, 44.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 111 / 14
+-------------------------------------------------------------------------
+Offset:              2.430ns (Levels of Logic = 4)
+  Source:            u1/vcount_5 (FF)
+  Destination:       rgb<11> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u1/vcount_5 to rgb<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            11   0.361   0.558  u1/vcount_5 (u1/vcount_5)
+     LUT3:I0->O            1   0.097   0.511  u1/video_on_SW0 (N2)
+     LUT6:I3->O           12   0.097   0.430  u1/video_on (video_on)
+     LUT2:I0->O            1   0.097   0.279  Mmux_rgb121 (rgb_9_OBUF)
+     OBUF:I->O                 0.000          rgb_9_OBUF (rgb<9>)
+    ----------------------------------------
+    Total                      2.430ns (0.652ns logic, 1.778ns route)
+                                       (26.8% logic, 73.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Delay:               0.673ns (Levels of Logic = 3)
+  Source:            sw<11> (PAD)
+  Destination:       rgb<11> (PAD)
+
+  Data Path: sw<11> to rgb<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.295  sw_11_IBUF (sw_11_IBUF)
+     LUT2:I1->O            1   0.097   0.279  Mmux_rgb31 (rgb_11_OBUF)
+     OBUF:I->O                 0.000          rgb_11_OBUF (rgb<11>)
+    ----------------------------------------
+    Total                      0.673ns (0.098ns logic, 0.575ns route)
+                                       (14.6% logic, 85.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.509|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.39 secs
+ 
+--> 
+
+Total memory usage is 414720 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

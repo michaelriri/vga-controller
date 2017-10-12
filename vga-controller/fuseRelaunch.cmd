@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/vga_sync_tf_isim_beh.exe" -prj "C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/vga_sync_tf_beh.prj" "work.vga_sync_tf" "work.glbl" 
