@@ -48,8 +48,8 @@ module vga_sync_tf;
 	// Outputs
 	wire hsync;
 	wire vsync;
-	//wire [9:0] pixel_x;
-	//wire [9:0] pixel_y;
+	wire [9:0] pixel_x;
+	wire [9:0] pixel_y;
 	wire video_on;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -58,8 +58,8 @@ module vga_sync_tf;
 		.rst(rst), 
 		.hsync(hsync), 
 		.vsync(vsync), 
-		//.pixel_x(pixel_x), 
-		//.pixel_y(pixel_y), 
+		.pixel_x(pixel_x), 
+		.pixel_y(pixel_y), 
 		.video_on(video_on)
 	);
 

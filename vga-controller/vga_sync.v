@@ -33,13 +33,11 @@
  
 `timescale 1ns / 1ps
 
-module vga_sync(clk, rst, hsync, vsync, 
-                  //pixel_x, pixel_y, 
-                  video_on);
+module vga_sync(clk, rst, hsync, vsync, pixel_x, pixel_y, video_on);
    
    input    clk, rst; 
    output   hsync, vsync, video_on; 
-   //output  [9:0] pixel_x, pixel_y;
+   output  [9:0] pixel_x, pixel_y;
    
    // =======================================================
    // Generate the 25MHz pixel rate from the 100Mhz board clk  
@@ -93,8 +91,8 @@ module vga_sync(clk, rst, hsync, vsync,
          
    assign vsync = ~(vcount >= 490 & vcount <= 491);    
    
-   //assign pixel_x    =  hcount; 
-   //assign pixel_y    =  vcount; 
+   assign pixel_x    =  hcount; 
+   assign pixel_y    =  vcount; 
    assign video_on   =  (hcount < 640) && (vcount < 480) ;
 
 
