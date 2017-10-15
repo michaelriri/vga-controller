@@ -21,3 +21,4 @@ xst -intstyle ise -ifn "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vga_ucf.ucf -p xc7a100t-csg324-3 "vga_controller_top.ngc" vga_controller_top.ngd  
 xst -intstyle ise -ifn "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/vga_controller_top.xst" -ofn "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/vga_controller_top.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vga_ucf.ucf -p xc7a100t-csg324-3 "vga_controller_top.ngc" vga_controller_top.ngd  
+xst -intstyle ise -ifn "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/vga_controller_top.xst" -ofn "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/vga_controller_top.syr" 

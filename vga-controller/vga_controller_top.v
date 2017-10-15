@@ -9,11 +9,13 @@
  * Email:      riosmichael28@ymail.com
  * Rev. Date:  October 11, 2017
  *
- * Description: This is the VGA's top level module. This module is used for 
-                the purpose of outputting the rgb signals based on the active
-                switches on the Nexys 4 DDR board. This, combined with the 
-                vga sync block, will output the desired color on the VGA 
-                display. 
+ * Description: This is the VGA's top level module. This module ties together 
+                the vga_sync module and the graphic_generator module. This 
+                module takes in the board clock and reset as input and outputs 
+                the hsync, vsync, and rgb signals which will drive a vga 
+                display. The pixel_x and pixel_y signals(the current pixel being
+                scanned) will be fed to the graphic_generator module which will 
+                be used to determine what to set the rgb value of that pixel to. 
  *         
  * In submitting this file for class work at CSULB, I am confirming that this 
    is my work and the work of no one else. 
