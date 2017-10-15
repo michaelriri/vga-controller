@@ -21,13 +21,11 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/vga_sync_tf.v";
-static int ng1[] = {0, 0};
-static int ng2[] = {1, 0};
+static const char *ng0 = "C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/graphic_generator_tf.v";
 
 
 
-static void Always_27_0(char *t0)
+static void Always_46_0(char *t0)
 {
     char t3[8];
     char *t1;
@@ -54,21 +52,21 @@ static void Always_27_0(char *t0)
     unsigned int t23;
     char *t24;
 
-LAB0:    t1 = (t0 + 3168U);
+LAB0:    t1 = (t0 + 2848U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(28, ng0);
-    t2 = (t0 + 2976);
+LAB2:    xsi_set_current_line(47, ng0);
+    t2 = (t0 + 2656);
     xsi_process_wait(t2, 5000LL);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(28, ng0);
-    t4 = (t0 + 2088);
+LAB4:    xsi_set_current_line(47, ng0);
+    t4 = (t0 + 1448);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
     memset(t3, 0, 8);
@@ -101,7 +99,7 @@ LAB9:    t22 = *((unsigned int *)t3);
     *((unsigned int *)t3) = (t22 & 1U);
     t23 = *((unsigned int *)t14);
     *((unsigned int *)t14) = (t23 & 1U);
-    t24 = (t0 + 2088);
+    t24 = (t0 + 1448);
     xsi_vlogvar_assign_value(t24, t3, 0, 0, 1);
     goto LAB2;
 
@@ -118,47 +116,34 @@ LAB10:    t18 = *((unsigned int *)t3);
 
 }
 
-static void Initial_30_1(char *t0)
+static void Initial_49_1(char *t0)
 {
     char *t1;
     char *t2;
-    char *t3;
 
-LAB0:    t1 = (t0 + 3416U);
+LAB0:    t1 = (t0 + 3096U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(30, ng0);
+LAB2:    xsi_set_current_line(49, ng0);
 
-LAB4:    xsi_set_current_line(32, ng0);
-    t2 = ((char*)((ng1)));
-    t3 = (t0 + 2088);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(33, ng0);
-    t2 = ((char*)((ng2)));
-    t3 = (t0 + 2248);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(36, ng0);
-    t2 = (t0 + 3224);
+LAB4:    xsi_set_current_line(53, ng0);
+    t2 = (t0 + 2904);
     xsi_process_wait(t2, 100000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(38, ng0);
-    t2 = ((char*)((ng1)));
-    t3 = (t0 + 2248);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    goto LAB1;
+LAB5:    goto LAB1;
 
 }
 
 
-extern void work_m_00000000000259605580_3083690524_init()
+extern void work_m_00000000000840162567_0096878882_init()
 {
-	static char *pe[] = {(void *)Always_27_0,(void *)Initial_30_1};
-	xsi_register_didat("work_m_00000000000259605580_3083690524", "isim/vga_sync_tf_isim_beh.exe.sim/work/m_00000000000259605580_3083690524.didat");
+	static char *pe[] = {(void *)Always_46_0,(void *)Initial_49_1};
+	xsi_register_didat("work_m_00000000000840162567_0096878882", "isim/graphic_generator_tf_isim_beh.exe.sim/work/m_00000000000840162567_0096878882.didat");
 	xsi_register_executes(pe);
 }

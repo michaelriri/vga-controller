@@ -26,14 +26,13 @@
  *===========================================================================*/ 
  `timescale 1ns / 1ps
 
-module vga_controller_top(clk, rst, sw, hsync, vsync, rgb);
+module vga_controller_top(clk, rst, hsync, vsync, rgb);
 
    input    clk, rst;
-   input    [11:0] sw; 
    output   [11:0] rgb; 
    output   hsync, vsync; 
    
-   wire     video_on, rst_s;
+   wire     video_on, rst_s, hsync, vsync;
    wire     [9:0] pixel_x, pixel_y; 
       
    aiso_rst    u0(.clk(clk), .reset(rst), .reset_s(rst_s));

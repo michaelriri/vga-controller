@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_sync_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/vga_sync_tf_isim_beh.wdb 
+Running: C:\Users\Michael Rios\Desktop\github\vga-controller\vga-controller\graphic_generator_tf_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/graphic_generator_tf_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -11,5 +11,3 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run all
-Stopped at time : 42881465 ns : File "C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/vga_sync.v" Line 56

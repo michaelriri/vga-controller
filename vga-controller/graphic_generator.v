@@ -27,6 +27,7 @@ module graphic_generator(clk, pixel_x, pixel_y, video_on, rgb);
    input    clk, video_on; 
    input    [9:0] pixel_x, pixel_y; 
    output   [11:0]rgb; 
+   reg      [11:0]rgb;
    
    wire     wall_on, ball_on, paddle_on; 
    wire     [11:0] wall_rgb, ball_rgb, paddle_rgb;
