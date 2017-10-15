@@ -34,11 +34,16 @@ module vga_controller_top(clk, rst, sw, hsync, vsync, rgb);
    output   hsync, vsync; 
    
    wire     video_on, rst_s;
-   assign   rgb = (video_on) ? sw : 12'b0;
+   wire     [9:0] pixel_x, pixel_y; 
+      
+   aiso_rst    u0(.clk(clk), .reset(rst), .reset_s(rst_s));
+   vga_sync    u1(.clk(clk), .rst(rst_s), .hsync(hsync),.vsync(vsync), 
+                  .pixel_x(pixel_x), .pixel_y(pixel_y), 
+                  .video_on(video_on));
+                  
+   graphic_generator u2(.clk(clk), .pixel_x(pixel_x), .pixel_y(pixel_y), 
+                        .video_on(video_on), .rgb(rgb));               
    
-   aiso_rst u0(.clk(clk), .reset(rst), .reset_s(rst_s));
-   vga_sync u1(.clk(clk), .rst(rst_s), .hsync(hsync), 
-                  .vsync(vsync), .video_on(video_on));
    
 
 endmodule

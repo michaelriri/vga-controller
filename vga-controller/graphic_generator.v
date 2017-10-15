@@ -22,13 +22,14 @@
  *===========================================================================*/ 
 `timescale 1ns / 1ps
 
-module graphic_generator(clk, rst, pixel_x, pixel_y, video_on, rgb);
+module graphic_generator(clk, pixel_x, pixel_y, video_on, rgb);
 
-   input    clk, rst, video_on; 
+   input    clk, video_on; 
    input    [9:0] pixel_x, pixel_y; 
    output   [11:0]rgb; 
    
-   wire     wall_on, ball_on, bar_on; 
+   wire     wall_on, ball_on, paddle_on; 
+   wire     [11:0] wall_rgb, ball_rgb, paddle_rgb;
    
    // ========================
    //          Wall 
@@ -37,10 +38,35 @@ module graphic_generator(clk, rst, pixel_x, pixel_y, video_on, rgb);
    assign   wall_rgb = 12'h00F; // blue 
    
    // ========================
-   //          Wall 
+   //          Ball  
    // ========================
-   assign   wall_on = (pixel_x >= 32) && (pixel_x <= 35);  
-   assign   wall_rgb = 12'h00F; // blue 
+   assign   ball_on = (pixel_x >= 580) && (pixel_x <= 588) && 
+                      (pixel_y >= 238) && (pixel_y <= 246);  
+   assign   ball_rgb = 12'hF00; // red 
+   
+   // ========================
+   //          Paddle  
+   // ========================
+   assign   paddle_on = (pixel_x >= 600) && (pixel_x <= 603) && 
+                        (pixel_y >= 204) && (pixel_y <= 276);  
+   assign   paddle_rgb = 12'h0F0; // green
+   
+   always @ (*) 
+      if (~video_on) 
+         rgb = 12'h000; // blank
+         
+      else if (wall_on) 
+         rgb = wall_rgb; 
+         
+      else if (ball_on) 
+         rgb = ball_rgb; 
+         
+      else if (paddle_on) 
+         rgb = paddle_rgb; 
+         
+      else 
+         rgb = 12'hFFF; //white
+   
    
 
 endmodule
