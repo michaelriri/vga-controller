@@ -17,24 +17,6 @@
 <msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
 </msg>
 
-<msg type="warning" file="Place" num="838" delta="old" >An IO Bus with more than one IO standard is found.
-<arg fmt="%s" index="1">Components associated with this bus are as follows: 
-	 Comp: sw&lt;0&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;1&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;2&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;3&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;4&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;5&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;6&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;7&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;8&gt;   IOSTANDARD = LVCMOS18
-	 Comp: sw&lt;9&gt;   IOSTANDARD = LVCMOS18
-	 Comp: sw&lt;10&gt;   IOSTANDARD = LVCMOS33
-	 Comp: sw&lt;11&gt;   IOSTANDARD = LVCMOS33
-
-</arg>
-</msg>
-
 <msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
 </msg>
 

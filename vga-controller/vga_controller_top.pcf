@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Oct 12 11:22:13 2017
+// Written by: Map P.20131013 on Fri Oct 20 08:32:15 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -15,21 +15,9 @@ COMP "rgb<7>" LOCATE = SITE "A6" LEVEL 1;
 COMP "rgb<8>" LOCATE = SITE "B7" LEVEL 1;
 COMP "rgb<9>" LOCATE = SITE "C7" LEVEL 1;
 COMP "hsync" LOCATE = SITE "B11" LEVEL 1;
-COMP "sw<10>" LOCATE = SITE "R16" LEVEL 1;
-COMP "sw<11>" LOCATE = SITE "T13" LEVEL 1;
-COMP "sw<0>" LOCATE = SITE "J15" LEVEL 1;
-COMP "sw<1>" LOCATE = SITE "L16" LEVEL 1;
-COMP "sw<2>" LOCATE = SITE "M13" LEVEL 1;
-COMP "sw<3>" LOCATE = SITE "R15" LEVEL 1;
 COMP "rgb<10>" LOCATE = SITE "D7" LEVEL 1;
-COMP "sw<4>" LOCATE = SITE "R17" LEVEL 1;
 COMP "rgb<11>" LOCATE = SITE "D8" LEVEL 1;
-COMP "sw<5>" LOCATE = SITE "T18" LEVEL 1;
-COMP "sw<6>" LOCATE = SITE "U18" LEVEL 1;
-COMP "sw<7>" LOCATE = SITE "R13" LEVEL 1;
-COMP "sw<8>" LOCATE = SITE "T8" LEVEL 1;
 COMP "vsync" LOCATE = SITE "B12" LEVEL 1;
-COMP "sw<9>" LOCATE = SITE "U8" LEVEL 1;
 COMP "rst" LOCATE = SITE "M18" LEVEL 1;
 SCHEMATIC END;
 
