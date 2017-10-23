@@ -57,24 +57,30 @@ module vga_controller_top_tf;
           
           // Verify the placement of the wall
           if (pixel_x >= 32 && pixel_x <= 35 && !(rgb == 12'h00f))  
-               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE", pixel_x, pixel_y, rgb);
+               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE"
+                         ,pixel_x, pixel_y, rgb);
           
           // Verify the placement of the ball    
-          else if ((pixel_x >= 580) && (pixel_x <= 588) && (pixel_y >= 238) && (pixel_y <= 246) && 
-                   !(rgb == 12'hf00))
-               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE", pixel_x, pixel_y, rgb);
+          else if ((pixel_x >= 580) && (pixel_x <= 588) && (pixel_y >= 238) 
+                   && (pixel_y <= 246) && !(rgb == 12'hf00))
+               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE"
+                         ,pixel_x, pixel_y, rgb);
           
           // Verify the placement of the paddlea
-          else if ((pixel_x >= 600) && (pixel_x <= 603) && (pixel_y >= 204) && (pixel_y <= 276) && !(rgb == 12'h0f0))
-               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE", pixel_x, pixel_y, rgb);
+          else if ((pixel_x >= 600) && (pixel_x <= 603) && (pixel_y >= 204)
+                   && (pixel_y <= 276) && !(rgb == 12'h0f0))
+               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE"
+                         ,pixel_x, pixel_y, rgb);
           
           // Verify that no pixel displays when display should be off
           else if (pixel_x > 640 && !(rgb == 12'h000)) 
-               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE", pixel_x, pixel_y, rgb);
+               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE"
+                         ,pixel_x, pixel_y, rgb);
                
           // Verify that no pixel displays when display should be off
           else if (pixel_y > 480 && !(rgb == 12'h000)) 
-               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE", pixel_x, pixel_y, rgb); 
+               $display ("Pixel X = %d    Pixel Y = %d   rgb = %h    FAILURE"
+                         ,pixel_x, pixel_y, rgb); 
           
           //Display "Success" if every case is satisfied 
           else 
