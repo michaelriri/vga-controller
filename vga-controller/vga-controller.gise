@@ -94,11 +94,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1508712791" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1508712791" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -112,19 +112,19 @@
       <outfile xil_pn:name="vga_sync.v"/>
       <outfile xil_pn:name="vga_sync_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1508712791" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2200320482503024989" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2200320482503024989" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1508712791" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2764685538666236607" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2764685538666236607" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1508712791" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3352193451796692368" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3352193451796692368" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1508712791" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788703" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -139,7 +139,7 @@
       <outfile xil_pn:name="vga_sync.v"/>
       <outfile xil_pn:name="vga_sync_tf.v"/>
     </transform>
-    <transform xil_pn:end_ts="1508712794" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8240807506881302037" xil_pn:start_ts="1508712791">
+    <transform xil_pn:end_ts="1508788706" xil_pn:in_ck="-5855097359028593172" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8240807506881302037" xil_pn:start_ts="1508788703">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -154,7 +154,7 @@
       <outfile xil_pn:name="vga_controller_top_tf_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1508712795" xil_pn:in_ck="8592806598602673627" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6337373937224485896" xil_pn:start_ts="1508712794">
+    <transform xil_pn:end_ts="1508788706" xil_pn:in_ck="8592806598602673627" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6337373937224485896" xil_pn:start_ts="1508788706">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -219,6 +219,7 @@
     <transform xil_pn:end_ts="1508513506" xil_pn:in_ck="8966872461437469600" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1870882871631105279" xil_pn:start_ts="1508513498">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -245,6 +246,7 @@
     <transform xil_pn:end_ts="1508513572" xil_pn:in_ck="-8794850882730214534" xil_pn:name="TRANEXT_par_virtex5" xil_pn:prop_ck="-2283627392121029586" xil_pn:start_ts="1508513538">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="vga_controller_top.ncd"/>
