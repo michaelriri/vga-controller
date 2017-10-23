@@ -1,0 +1,6 @@
+verilog work "vga_sync.v"
+verilog work "graphic_generator.v"
+verilog work "aiso_rst.v"
+verilog work "vga_controller_top.v"
+verilog work "vga_controller_top_tf.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

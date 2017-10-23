@@ -1,0 +1,6 @@
+verilog isim_temp "vga_sync.v"
+verilog isim_temp "graphic_generator.v"
+verilog isim_temp "aiso_rst.v"
+verilog isim_temp "vga_controller_top.v"
+verilog isim_temp "vga_controller_top_tf.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

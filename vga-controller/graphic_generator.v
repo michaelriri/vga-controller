@@ -9,7 +9,11 @@
  * Email:      riosmichael28@ymail.com
  * Rev. Date:  October 14, 2017
  *
- * Description: 
+ * Description: This module is in charge of displaying 3 fixed objects on the 
+                VGA display. This is achieved using the horizontal and vertical
+                counts generated in the vga_sync module. When the counts are 
+                between certain values, the rgb value is changed to form the 
+                fixed objects. 
  *         
  * In submitting this file for class work at CSULB, I am confirming that this 
    is my work and the work of no one else. 
@@ -66,7 +70,7 @@ module graphic_generator(clk, pixel_x, pixel_y, video_on, rgb);
          rgb = paddle_rgb; 
          
       else 
-         rgb = 12'hFFF; //white
+         rgb = 12'hFFF; // white
    
    
 
