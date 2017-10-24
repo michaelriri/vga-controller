@@ -53,7 +53,6 @@ module vga_controller_top_tf;
    // =======================================================
    // Generate the 25MHz pixel rate from the 100Mhz board clk  
    // =======================================================
-
    reg [1:0] pxl_clk; 
    wire tick;
    assign tick = pxl_clk == 2'b11; 
@@ -69,7 +68,6 @@ module vga_controller_top_tf;
    // Horizontal count 0 ... 799
    // Update at 25MHz
    // ================================
-   
    reg [9:0] pixel_x;
    wire endh;
    assign endh = (pixel_x == 10'd799); 
@@ -78,15 +76,13 @@ module vga_controller_top_tf;
       if (rst) pixel_x <= 10'b0; 
       else if (tick) 
          if (endh)   pixel_x <= 10'b0; 
-         else        pixel_x <= pixel_x + 10'b1; 
-               
+         else        pixel_x <= pixel_x + 10'b1;  
       
    // ================================
    // Vertical Sync 
    // Vertical count 0 ... 524
    // Update at 25MHz
    // ================================
-   
    reg [9:0] pixel_y; 
    wire endv;
    assign endv = (pixel_y == 10'd524);
@@ -104,12 +100,10 @@ module vga_controller_top_tf;
                   $finish; 
                end 
             else        pixel_y <= pixel_y + 10'b1; 
-
     
    // Generate 10ns clk
    always 
       #5 clk = ~clk; 
-
 
    assign video_on   =  (pixel_x < 640) && (pixel_y < 480) ;
 
@@ -171,6 +165,6 @@ module vga_controller_top_tf;
 		#100;
       rst = 0;
 
-    end 
+   end 
       
 endmodule

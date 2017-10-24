@@ -1,4 +1,0 @@
-verilog work "vga_sync.v"
-verilog work "graphic_generator.v"
-verilog work "aiso_rst.v"
-verilog work "vga_controller_top.v"
