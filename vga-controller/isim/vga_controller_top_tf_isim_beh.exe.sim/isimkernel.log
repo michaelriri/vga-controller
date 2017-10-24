@@ -2,14 +2,14 @@ Command line:
    vga_controller_top_tf_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  57357
+     -socket  57377
 
-Mon Oct 23 21:15:24 2017
+Mon Oct 23 21:27:56 2017
 
 
  Elaboration Time: 0.03125 sec
 
- Current Memory Usage: 842.322 Meg
+ Current Memory Usage: 842.281 Meg
 
  Total Signals          : 52
  Total Nets             : 97
@@ -19,11 +19,11 @@ Mon Oct 23 21:15:24 2017
  Total Processes        : 39
  Total Traceable Variables  : 30
  Total Scalar Nets and Variables : 238
-Total Line Count : 109
+Total Line Count : 108
 
  Total Simulation Time: 2.5 sec
 
- Current Memory Usage: 842.322 Meg
+ Current Memory Usage: 684.995 Meg
 
-Mon Oct 23 21:15:33 2017
+Mon Oct 23 21:29:10 2017
 

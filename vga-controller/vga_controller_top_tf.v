@@ -148,7 +148,7 @@ module vga_controller_top_tf;
                   flag = 1'b1;
                end
              
-             // Verify the placement of the paddlea
+             // Verify the placement of the paddle
              else if ((video_on) && (pixel_x >= 600) && (pixel_x <= 603) && (pixel_y >= 204)
                       && (pixel_y <= 276) && !(rgb == 12'h0f0))
                begin 
@@ -158,8 +158,7 @@ module vga_controller_top_tf;
                end
           end
           // Display "Success" if every case is satisfied 
-   
-
+ 
    end
 
    initial begin
@@ -175,4 +174,3 @@ module vga_controller_top_tf;
     end 
       
 endmodule
-
