@@ -10,7 +10,12 @@
  * Rev. Date:  October 20, 2017
  *
  * Description: This module is a text fixture for the vga_controller module. 
-                This module is a self-checking test bench, meaning that 
+                This module is a self-checking test bench, meaning that the 
+                design will anticipate what the outputs should be and inform 
+                the user of any discrepancies. This module sets off a flag 
+                when the rgb value at a given point is not its expected value
+                and if the flag is set, then an error message will print to the
+                console. 
  *         
  * In submitting this file for class work at CSULB, I am confirming that this 
    is my work and the work of no one else. 
@@ -34,9 +39,17 @@ module vga_controller_top_tf;
 	wire vsync;
 	wire [11:0] rgb;
 
+   reg flag = 1'b0; // flag will be used to determine success
 
-
-   reg flag = 1'b0; 
+	// Instantiate the Unit Under Test (UUT)
+	vga_controller_top uut (
+		.clk(clk), 
+		.rst(rst), 
+		.hsync(hsync), 
+		.vsync(vsync), 
+		.rgb(rgb)
+	);
+      
    // =======================================================
    // Generate the 25MHz pixel rate from the 100Mhz board clk  
    // =======================================================
@@ -57,17 +70,16 @@ module vga_controller_top_tf;
    // Update at 25MHz
    // ================================
    
-   reg [9:0] hcount;
+   reg [9:0] pixel_x;
    wire endh;
-   assign endh = (hcount == 10'd799); 
+   assign endh = (pixel_x == 10'd799); 
    
    always @ (posedge clk, posedge rst) 
-      if (rst) hcount <= 10'b0; 
+      if (rst) pixel_x <= 10'b0; 
       else if (tick) 
-         if (endh)   hcount <= 10'b0; 
-         else        hcount <= hcount + 10'b1; 
-         
-         assign pixel_x = hcount;
+         if (endh)   pixel_x <= 10'b0; 
+         else        pixel_x <= pixel_x + 10'b1; 
+               
       
    // ================================
    // Vertical Sync 
@@ -75,77 +87,83 @@ module vga_controller_top_tf;
    // Update at 25MHz
    // ================================
    
-   reg [9:0] vcount; 
+   reg [9:0] pixel_y; 
    wire endv;
-   assign endv = (vcount == 10'd524);
+   assign endv = (pixel_y == 10'd524);
    
    always @ (posedge clk, posedge rst) 
-      if (rst) vcount <= 10'b0; 
+      if (rst) pixel_y <= 10'b0; 
       else if (tick) 
          if (endh)
-            if (endv)
-               begin
-                  vcount <= 10'b0; 
-                  //check the flag register which will 
-                  // be asserted if there is an error
+            if (endv)   
+            // After one scan, finish the simulation and 
+            // display the results. 
+               begin 
                   if (flag == 1'b1) $display("Error"); 
-                  else              $display("Success"); 
-                  
-                  // finish simulation after display has 
-                  // been scanned once 
-                  $finish;
-               end
-            else        vcount <= vcount + 10'b1; 
-            
+                  else              $display("Success");
+                  $finish; 
+               end 
+            else        pixel_y <= pixel_y + 10'b1; 
+
     
-    assign pixel_y = vcount;
-
-
-	// Instantiate the Unit Under Test (UUT)
-	vga_controller_top uut (
-		.clk(clk), 
-		.rst(rst), 
-		.hsync(hsync), 
-		.vsync(vsync), 
-		.rgb(rgb)
-	);
-   
-   // generate 10ns clk
+   // Generate 10ns clk
    always 
-      #10 clk = ~clk; 
-   
+      #5 clk = ~clk; 
+
+
+   assign video_on   =  (pixel_x < 640) && (pixel_y < 480) ;
+
+   // ================================
+   // Verify the placement of the 
+   // fixed objects by checking the 
+   // RGB values at a the specified 
+   // locations...
+   // ================================
    always @ (posedge clk, posedge rst)
    begin 
-          
-          // Verify the placement of the wall
-          if (pixel_x >= 32 && pixel_x <= 35 && !(rgb == 12'h00f))  
+      if(tick) 
+         begin 
+             // Verify that rgb = 000 when display is off
+             if (~(video_on) && !(rgb==12'h000))
+             begin 
+               $display("pixel_x = %d  pixel_y = %d   rgb = %h", 
+                         pixel_x,      pixel_y,       rgb); 
                flag = 1'b1;
-          
-          // Verify the placement of the ball    
-          else if ((pixel_x >= 580) && (pixel_x <= 588) && (pixel_y >= 238) 
-                   && (pixel_y <= 246) && !(rgb == 12'hf00))
-               flag = 1'b1;
-          
-          // Verify the placement of the paddlea
-          else if ((pixel_x >= 600) && (pixel_x <= 603) && (pixel_y >= 204)
-                   && (pixel_y <= 276) && !(rgb == 12'h0f0))
-               flag = 1'b1;
-          
-          // Verify that no pixel displays when display should be off
-          else if (pixel_x > 640 && !(rgb == 12'h000)) 
-               flag = 1'b1;
-               
-          // Verify that no pixel displays when display should be off
-          else if (pixel_y > 480 && !(rgb == 12'h000)) 
-               flag = 1'b1;
-          
+             end
+             
+             // Verify the placement of the wall
+             else if ((video_on) && (pixel_x >= 32) && (pixel_x <= 35) && !(rgb == 12'h00f))
+               begin 
+                  $display("pixel_x = %d  pixel_y = %d   rgb = %h NOT 00f", 
+                            pixel_x,      pixel_y,       rgb); 
+                  flag = 1'b1;
+               end
+             
+             // Verify the placement of the ball    
+             else if ((video_on) && (pixel_x >= 580) && (pixel_x <= 588) && (pixel_y >= 238) 
+                      && (pixel_y <= 246) && !(rgb == 12'hf00))
+               begin 
+                  $display("pixel_x = %d  pixel_y = %d   rgb = %h", 
+                            pixel_x,      pixel_y,       rgb); 
+                  flag = 1'b1;
+               end
+             
+             // Verify the placement of the paddlea
+             else if ((video_on) && (pixel_x >= 600) && (pixel_x <= 603) && (pixel_y >= 204)
+                      && (pixel_y <= 276) && !(rgb == 12'h0f0))
+               begin 
+                  $display("pixel_x = %d  pixel_y = %d   rgb = %h", 
+                            pixel_x,      pixel_y,       rgb); 
+                  flag = 1'b1;
+               end
+          end
           // Display "Success" if every case is satisfied 
-          else 
-               flag = 1'b0;
+   
 
    end
-      
-	initial begin
+
+   initial begin
+
 		// Initialize Inputs
       clk = 0;
 		rst = 1;
@@ -155,7 +173,6 @@ module vga_controller_top_tf;
       rst = 0;
 
     end 
-
       
 endmodule
 
