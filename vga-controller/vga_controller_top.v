@@ -7,7 +7,7 @@
  * Project:    VGA Controller
  * Designer:   Michael Rios - Copyright © 2017. All rights reserved. 
  * Email:      riosmichael28@ymail.com
- * Rev. Date:  October 11, 2017
+ * Rev. Date:  November 13, 2017
  *
  * Description: This is the VGA's top level module. This module ties together 
                 the vga_sync module and the graphic_generator module. This 
@@ -28,9 +28,10 @@
  *===========================================================================*/ 
  `timescale 1ns / 1ps
 
-module vga_controller_top(clk, rst, hsync, vsync, rgb);
+module vga_controller_top(clk, rst, btn, hsync, vsync, rgb);
 
    input    clk, rst;
+   input    [1:0] btn; 
    output   [11:0] rgb; 
    output   hsync, vsync; 
    
@@ -42,7 +43,7 @@ module vga_controller_top(clk, rst, hsync, vsync, rgb);
                   .pixel_x(pixel_x), .pixel_y(pixel_y), 
                   .video_on(video_on));
                   
-   graphic_generator u2(.clk(clk), .pixel_x(pixel_x), .pixel_y(pixel_y), 
+   graphic_generator u2(.clk(clk), .rst(rst), .btn(btn), .pixel_x(pixel_x), .pixel_y(pixel_y), 
                         .video_on(video_on), .rgb(rgb));               
    
    
