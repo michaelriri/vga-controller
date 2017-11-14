@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-10-23T21:32:30</DateModified>
+  <DateModified>2017-11-13T16:58:48</DateModified>
   <ModuleName>vga_controller_top</ModuleName>
   <SummaryTimeStamp>2017-10-14T17:22:31</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller/iseconfig/vga_controller_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Michael Rios/Desktop/github/vga-controller/vga-controller\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Michael Rios/Desktop/vga-controller/vga-controller/iseconfig/vga_controller_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Michael Rios/Desktop/vga-controller/vga-controller\</ImplementationReportsDirectory>
   <DateInitialized>2017-10-14T15:26:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
