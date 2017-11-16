@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Michael Rios\Desktop\github\vga-controller\vga-controller\vga_controller_top.ncd
-OUTFILE=C:\Users\Michael Rios\Desktop\github\vga-controller\vga-controller\vga_controller_top.bit
+INFILE=C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_controller_top.ncd
+OUTFILE=C:\Users\Michael Rios\Desktop\vga-controller\vga-controller\vga_controller_top.bit
 FAMILY=Artix7
 PART=xc7a100t-3csg324
-WORKINGDIR=C:\Users\Michael Rios\Desktop\github\vga-controller\vga-controller
+WORKINGDIR=C:\Users\Michael Rios\Desktop\vga-controller\vga-controller
 LICENSE=WebPack
 USER_INFO=211236124_0_0_310

@@ -28,24 +28,29 @@
  *===========================================================================*/ 
  `timescale 1ns / 1ps
 
-module vga_controller_top(clk, rst, btn, hsync, vsync, rgb);
+module vga_controller_top(clk, rst, btn_up, btn_down, hsync, vsync, rgb);
 
    input    clk, rst;
-   input    [1:0] btn; 
+   input    btn_up, btn_down; 
    output   [11:0] rgb; 
    output   hsync, vsync; 
    
    wire     video_on, rst_s, hsync, vsync;
    wire     [9:0] pixel_x, pixel_y; 
+   wire     db_btn_up, db_btn_down;
       
    aiso_rst    u0(.clk(clk), .reset(rst), .reset_s(rst_s));
+   
    vga_sync    u1(.clk(clk), .rst(rst_s), .hsync(hsync),.vsync(vsync), 
                   .pixel_x(pixel_x), .pixel_y(pixel_y), 
                   .video_on(video_on));
                   
-   graphic_generator u2(.clk(clk), .rst(rst), .btn(btn), .pixel_x(pixel_x), .pixel_y(pixel_y), 
+   debounce    u2(.clk(clk), .reset(rst), .sw(btn_up), .db(db_btn_up)), 
+   
+               u3(.clk(clk), .reset(rst), .sw(btn_down), .db(db_btn_down)); 
+   
+   graphic_generator u4(.clk(clk), .rst(rst), .btn({db_btn_down, db_btn_up}), 
+                        .pixel_x(pixel_x), .pixel_y(pixel_y), 
                         .video_on(video_on), .rgb(rgb));               
-   
-   
 
 endmodule

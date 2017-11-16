@@ -146,7 +146,6 @@ module graphic_generator(clk, rst, btn, pixel_x, pixel_y, video_on, rgb);
          x_delta_next = -2; 
    end 
       
-   
    // ========================
    // rgb multiplexing circuit 
    // ========================
